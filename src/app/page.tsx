@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../utils/supabaseClient";
 import AuthForm from "../components/auth-form";
 import { signOut, getCurrentUser } from "@/lib/auth";
+import ChatApp from "@/components/chat-window";
 
 export default function Chat() {
   const [user, setUser] = useState<any>(null);
@@ -19,11 +20,11 @@ export default function Chat() {
   }, []);
 
   return (
-      <div className="max-w-md mx-auto p-4">
+      <div className="">
         {!user ? (
             <AuthForm onAuthSuccess={() => getCurrentUser().then(setUser)} />
         ) : (
-            <p>chat</p>
+            <ChatApp/>
             )}
       </div>
   );
