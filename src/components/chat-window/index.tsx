@@ -1,19 +1,18 @@
-"use client"
-import { useState } from "react";
-import {HelpCircle, MoreVertical, Phone, RefreshCcw, Search} from "lucide-react";
+"use client";
 import Sidebar from "@/components/chat-window/sidebar";
+import Navbar from "@/components/chat-window/navbar";
 
 export default function ChatApp() {
-    const [selectedChat, setSelectedChat] = useState(null);
-    const chats = [
-        { id: 1, name: "Test Skope Final 5", lastMessage: "Support2: This doesn’t go on Tuesday...", time: "Yesterday" },
-        { id: 2, name: "Periskope Team Chat", lastMessage: "Periskope: Test message", time: "28-Feb-25" },
-        { id: 3, name: "+91 99999 99999", lastMessage: "Hi there, I’m Swapnika...", time: "25-Feb-25" },
-    ];
-
     return (
-        <div className="h-screen w-screen">
-            <Sidebar/>
+        <div className="h-screen w-screen flex">
+            {/* Sidebar */}
+            <Sidebar />
+
+            {/* Main Content */}
+            <div className="flex flex-col flex-1">
+                <Navbar />
+                <div className="flex-1 bg-gray-100">Chat Content</div>
+            </div>
         </div>
     );
 }
