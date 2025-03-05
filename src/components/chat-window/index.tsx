@@ -1,6 +1,7 @@
 "use client";
 import Sidebar from "@/components/chat-window/sidebar";
 import Navbar from "@/components/chat-window/navbar";
+import Users from "@/components/chat-window/users";
 
 export default function ChatApp() {
     return (
@@ -11,7 +12,7 @@ export default function ChatApp() {
             {/* Main Content */}
             <div className="flex flex-col flex-1">
                 <Navbar />
-                <div className="flex-1 bg-gray-100">Chat Content</div>
+                <Users/>
             </div>
         </div>
     );
